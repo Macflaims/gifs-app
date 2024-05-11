@@ -34,16 +34,14 @@ export class GifsService {
 
     const params = new HttpParams()
       .set("api_key", this.ApiKey)
-      .set("limit", "5")
+      .set("limit", "10")
       .set("q", tag)
 
     this.http.get<SearchResponse>(`${this.serviceUrl}/search`, { params })
       .subscribe(resp => {
         this.gifList = resp.data
-        console.log(this.gifList)
       })
 
-    //"https://api.giphy.com/v1/gifs/search?api_key=Tpuf3qKAZ30FOsYt9KxcXQ4M9KJZlzyZ&q=Valorant&limit=5"
 
   }
 
